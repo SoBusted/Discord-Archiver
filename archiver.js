@@ -14,7 +14,7 @@ bot.on('message', async message => {
         return;
     }
 
-    if (message.channel.type === 'dm') {
+    if (message.author.id === bot.user.id && Config.IGNORE_OWN_FILES) {
         return;
     }
 
