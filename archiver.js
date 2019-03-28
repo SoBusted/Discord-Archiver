@@ -10,7 +10,7 @@ bot.on('ready', async () => {
 });
 
 bot.on('message', async message => {
-    if (message.author.bot) {
+    if (message.author.bot && Config.IGNORE_BOT_FILES) {
         return;
     }
 
@@ -25,6 +25,6 @@ bot.on('message', async message => {
             }
         });
     }
-})
+});
 
 bot.login(Config.TOKEN);
